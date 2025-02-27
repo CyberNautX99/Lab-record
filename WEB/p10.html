@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mathematical Expression Evaluator</title>
+    <script type="text/javascript">
+        function mathExp() {
+            let expression = document.getElementById("exptext").value;
+            let resultField = document.getElementById("resulttext");
+
+            try {
+                // Use Function() instead of eval() for safety
+                let result = new Function("return " + expression)();
+                resultField.value = result;
+            } catch (error) {
+                resultField.value = "Invalid Expression!";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2> Math Expression Evaluator</h2>
+    <form>
+        <table>
+            <tr>
+                <td>Expression:</td>
+                <td><input type="text" id="exptext"></td>
+            </tr>
+            <tr>
+                <td>Result:</td>
+                <td><input type="text" id="resulttext" readonly></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" value="Calculate" onclick="mathExp()"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

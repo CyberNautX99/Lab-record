@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Factorial Calculator</title>
+    <script>
+        function calculateFactorial() {
+            let num = document.getElementById("num").value;
+            let resultArea = document.getElementById("result");
+
+            // Validate input
+            if (isNaN(num) || num < 0) {
+                resultArea.innerText = "❌ Please enter a valid non-negative number.";
+                return;
+            }
+
+            num = parseInt(num);
+            let fact = 1;
+
+            // Calculate factorial
+            for (let i = 1; i <= num; i++) {
+                fact *= i;
+            }
+
+            // Display result
+            resultArea.innerText = `✅ Factorial of ${num} is: ${fact}`;
+        }
+    </script>
+</head>
+<body style="text-align: center; font-family: Arial, sans-serif; background-color: #f0f8ff;">
+    <h2>🔢 Factorial Calculator</h2>
+    <label>Enter a Number: </label>
+    <input type="text" id="num" placeholder="Enter a number">
+    <button onclick="calculateFactorial()">Find Factorial</button>
+    <p id="result" style="font-size: 18px; font-weight: bold; color: #333;"></p>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prime Numbers in a Range</title>
+    <script>
+        function isPrime(num) {
+            if (num < 2) return false;
+            if (num === 2) return true;
+            if (num % 2 === 0) return false;
+            
+            let sqrtNum = Math.sqrt(num);
+            for (let i = 3; i <= sqrtNum; i += 2) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+
+        function primeNumbers() {
+            let n = document.getElementById("primeText").value;
+            let displayArea = document.getElementById("primeArea");
+            let result = "";
+
+            // Validate input
+            if (isNaN(n) || n < 2) {
+                displayArea.value = "Please enter a valid number greater than or equal to 2.";
+                return;
+            }
+
+            // Convert input to integer
+            n = parseInt(n);
+
+            // Generate prime numbers
+            for (let p = 2; p <= n; p++) {
+                if (isPrime(p)) {
+                    result += p + " ";
+                }
+            }
+
+            // Display result
+            displayArea.value = result || "No prime numbers found.";
+        }
+    </script>
+</head>
+<body style="text-align: center; font-family: Arial, sans-serif; background-color: #f0f8ff;">
+    <h2>🔢 Prime Numbers Generator</h2>
+    <p>Enter a number to display all prime numbers up to that number:</p>
+    <input type="text" id="primeText" placeholder="Enter a number">
+    <button onclick="primeNumbers()">Find Primes</button>
+    <br><br>
+    <textarea id="primeArea" rows="10" cols="50" readonly></textarea>
+</body>
+</html>

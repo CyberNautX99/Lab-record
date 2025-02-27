@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Registration Form</title>
+    <script>
+        function evalidation() {
+            let firstName = document.eform.FirstName.value.trim();
+            let lastName = document.eform.LastName.value.trim();
+            let password = document.eform.PASSWORD.value;
+            let confirmPassword = document.eform.ConformPassword.value;
+            let gender = document.querySelector('input[name="r"]:checked');
+            let email = document.eform.email.value.trim();
+            
+            // Validate required fields
+            if (firstName === "" || lastName === "" || password === "" || confirmPassword === "" || !gender || email === "") {
+                alert("Please fill out all fields.");
+                return false;
+            }
+
+            // Validate password length
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+
+            // Validate password match
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return false;
+            }
+
+            // Validate email format
+            let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!email.match(emailPattern)) {
+                alert("Enter a valid email address!");
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
+</head>
+<body bgcolor="cyan">
+    <h2 align="center">📧 Email Registration Form</h2>
+    
+    <form name="eform" onsubmit="return evalidation()">
+        <table align="center" cellspacing="10">
+            <tr>
+                <td>First Name:</td>
+                <td><input type="text" name="FirstName"></td>
+                <td>Last Name:</td>
+                <td><input type="text" name="LastName"></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td colspan="3"><input type="text" name="email"></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="PASSWORD"></td>
+                <td>Retype Password:</td>
+                <td><input type="password" name="ConformPassword"></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <input type="radio" name="r" value="male"> Male
+                    <input type="radio" name="r" value="female"> Female
+                </td>
+            </tr>
+            <tr>
+                <td>Country:</td>
+                <td colspan="3">
+                    <select name="con">
+                        <option>India</option>
+                        <option>USA</option>
+                        <option>China</option>
+                        <option>UAE</option>
+                        <option>UK</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Date of Birth:</td>
+                <td>
+                    <select name="dob">
+                        <script>
+                            for (let i = 1; i <= 31; i++) {
+                                document.write("<option>" + i + "</option>");
+                            }
+                        </script>
+                    </select>
+                    <select name="mon">
+                        <option>JAN</option><option>FEB</option><option>MAR</option>
+                        <option>APR</option><option>MAY</option><option>JUNE</option>
+                        <option>JULY</option><option>AUG</option><option>SEP</option>
+                        <option>OCT</option><option>NOV</option><option>DEC</option>
+                    </select>
+                    <select name="year">
+                        <script>
+                            for (let i = 1900; i <= 2005; i++) {
+                                document.write("<option>" + i + "</option>");
+                            }
+                        </script>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" align="center">
+                    <input type="submit" value="Register">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

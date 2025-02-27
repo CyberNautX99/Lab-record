@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>onMouseOver & onMouseOut Example</title>
+    <script>
+        function changeTextColor(element) {
+            element.style.color = "red";
+        }
+
+        function resetTextColor(element) {
+            element.style.color = "black";
+        }
+
+        function changeImage() {
+            document.getElementById("hoverImage").src = "image/hover1.jpg";
+        }
+
+        function resetImage() {
+            document.getElementById("hoverImage").src = "image/original.jpeg";
+        }
+    </script>
+</head>
+<body>
+    <h2>🎨 Mouse Events Example</h2>
+
+    <!-- Text hover effect -->
+    <p onmouseover="changeTextColor(this)" onmouseout="resetTextColor(this)">
+        Hover over this text to change its color.
+    </p>
+
+    <!-- Image hover effect -->
+    <img id="hoverImage" src="image/original.jpeg" height="auto" width="auto" 
+         onmouseover="changeImage()" onmouseout="resetImage()">
+
+</body>
+</html>

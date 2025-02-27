@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Clock</title>
+    <script>
+        function startClock() {
+            let theTime = new Date();
+            let hours = theTime.getHours();
+            let minutes = theTime.getMinutes();
+            let seconds = theTime.getSeconds();
+            let amPm = hours >= 12 ? "PM" : "AM";
+
+            // Convert to 12-hour format
+            hours = hours % 12 || 12;
+
+            // Add leading zeros if needed
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            // Update time display
+            document.getElementById("clockspot").innerText = hours + ":" + minutes + ":" + seconds + " " + amPm;
+
+            // Refresh clock every second
+            setTimeout(startClock, 1000);
+        }
+    </script>
+</head>
+<body onload="startClock()" style="background-color: #FFFFCC; text-align: center;">
+    <h2 style="color: #333;">⏰ Digital Clock</h2>
+    <h1 id="clockspot" style="font-size: 40px; font-weight: bold; color: #000;"></h1>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Application Form</title>
+</head>
+<body bgcolor="#E6F7FF">  
+
+    <div align="center">
+        <h1>Application Form</h1>
+        
+        <table border="2" cellspacing="5" cellpadding="20" align="center" >
+            <tr>
+                <td>
+                    <table width="600" border="0" cellspacing="10">
+                        <tr>
+                            <td width="180"><b>Name</b></td>
+                            <td width="20">:</td>
+                            <td><input type="text" name="name"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Address</b></td>
+                            <td width="20">:</td>
+                            <td><textarea name="address" rows="1" cols="19"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><b>Father's Name</b></td>
+                            <td width="20">:</td>
+                            <td><input type="text" name="father_name"></td>
+                        </tr> 
+                        <tr>
+                            <td><b>Nationality</b></td>
+                            <td>:</td>
+                            <td><input type="text" name="nationality"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Religion</b></td>
+                            <td>:</td>
+                            <td><input type="text" name="religion"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Gender</b></td>
+                            <td>:</td>
+                            <td>
+                                <input type="radio" name="gender" value="male"> Male
+                                <input type="radio" name="gender" value="female"> Female
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Known Languages</b></td>
+                            <td>:</td>
+                            <td>
+                                <input type="checkbox" name="language" value="mal"> Malayalam
+                                <input type="checkbox" name="language" value="eng"> English
+                                <input type="checkbox" name="language" value="hin"> Hindi
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Date Of Birth</b></td>
+                            <td>:</td>
+                            <td>
+                                Date 
+                                <select name="dob_day">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                </select>
+                                Month 
+                                <select name="dob_month">
+                                    <option value="Jan">Jan</option>
+                                    <option value="Feb">Feb</option>
+                                </select>
+                                Year 
+                                <select name="dob_year">
+                                    <option value="1991">1991</option>
+                                    <option value="1992">1992</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" align="center">
+                                <input type="submit" value="SUBMIT">
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>
