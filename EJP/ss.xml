@@ -1,0 +1,11 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="3.0">
+    <servlet>
+        <servlet-name>SessionCounterServlet</servlet-name>
+        <servlet-class>SessionCounterServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SessionCounterServlet</servlet-name>
+        <url-pattern>/SessionCounterServlet</url-pattern>
+    </servlet-mapping>
+</web-app>
